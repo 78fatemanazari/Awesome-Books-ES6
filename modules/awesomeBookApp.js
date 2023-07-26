@@ -1,12 +1,27 @@
+import { DateTime } from '../node_modules/luxon/src/luxon.js';
 import Book from './book.js';
 
 class AwesomeBookApp {
   constructor() {
-    this.booksCollection = [];
+    this.booksCollection = AwesomeBookApp.getBooksFromLocalStorage();
+
     this.addBookButton = document.getElementById('addBookBtn');
+    this.addBookButton.addEventListener('click', this.handleAddBook.bind(this));
 
     this.bookListDiv = document.getElementById('bookList');
     this.displayBooks();
+  }
+
+  storeBooksInLocalStorage() {
+    const booksJSON = JSON.stringify(this.booksCollection);
+
+    localStorage.setItem('books', booksJSON);
+  }
+
+  static getBooksFromLocalStorage() {
+    const booksJSON = localStorage.getItem('books');
+
+    return booksJSON ? JSON.parse(booksJSON) : [];
   }
 
   addBook(title, author) {
@@ -14,13 +29,30 @@ class AwesomeBookApp {
       const newBook = new Book(title, author);
       this.booksCollection.push(newBook);
 
+      this.storeBooksInLocalStorage();
+
       this.displayBooks();
     }
   }
 
   removeBook(bookIndex) {
     this.booksCollection.splice(bookIndex, 1);
+
+    this.storeBooksInLocalStorage();
+
     this.displayBooks();
+  }
+
+  handleAddBook() {
+    const titleInput = document.getElementById('titleInput');
+    const authorInput = document.getElementById('authorInput');
+    const title = titleInput.value;
+    const author = authorInput.value;
+
+    this.addBook(title, author);
+
+    titleInput.value = '';
+    authorInput.value = '';
   }
 
   displayBooks() {
@@ -43,6 +75,11 @@ class AwesomeBookApp {
       listItem.appendChild(removeButton);
       this.bookListDiv.appendChild(listItem);
     });
+    const now = DateTime.now();
+    const formattedDateTime = now.toLocaleString(DateTime.DATETIME_MED);
+
+    const currentDateTimeElement = document.getElementById('currentDateTime');
+    currentDateTimeElement.textContent = `Current Date and Time: ${formattedDateTime}`;
   }
 }
 

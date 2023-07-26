@@ -64,6 +64,15 @@ header {
   color: blue;
 }
 
+#currentDateTime {
+  font-family: 'Comic Neue', cursive;
+  font-size: 20px;
+  font-weight: 600;
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+}
+
 .books-container {
   margin-top: 10%;
 }

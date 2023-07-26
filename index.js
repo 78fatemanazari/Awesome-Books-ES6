@@ -1,3 +1,4 @@
+import dateTime from './modules/dateTime.js';
 import AwesomeBookApp from './modules/awesomeBookApp.js';
 
 const lists = document.getElementById('lists');
@@ -27,6 +28,8 @@ addBookButton.addEventListener('click', (e) => {
   titleInput.value = '';
   authorInput.value = '';
 });
+
+dateTime();
 
 (() => {
   lists.addEventListener('click', (event) => {
