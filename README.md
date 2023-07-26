@@ -44,7 +44,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [See Live Demo](https://andresespi.github.io/AwesomeBooks/)
+- [See Live Demo](https://78fatemanazari.github.io/Awesome-Books-ES6/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -105,7 +105,7 @@ The deployment of the project will depend on your needs and the implementation p
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
-## 👥 Author <a name="AndresEspi-CarlosZ96-78fatemanazari"></a>
+## 👥 Author
 
 👤 **78fatemanazari**
 
@@ -124,8 +124,6 @@ The deployment of the project will depend on your needs and the implementation p
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](https://github.com/AndresEspi/AwesomeBooks/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
