@@ -1,12 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Awesome Books With Es6</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="index.css">
+  <title>Awesome Books</title>
 </head>
 <body>
-    <script src="index.js"></script>
+  <header>
+    <p class="logo">Awesome Books</p>
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="#" id="lists">Lists</a>
+        </li>
+        <li>
+          <a href="#" id="add-books">Add new</a>
+        </li>
+        <li>
+          <a href="#" id="contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <span id="currentDateTime"></span>
+  <div class="books-container">
+    <section id="book-lists" class="book-list-js content">
+      <h1 class="title">
+        All awesome books
+      </h1>
+      <ul id="bookList"></ul>
+    </section>
+    <section id="books" class="book-list-input content">
+      <h1 class="heading">Add a new Book</h1>
+      <form action="/" id="form">
+          <input type="text" id="titleInput" placeholder="Title">
+          <input type="text" id="authorInput" placeholder="Author">
+      </form>
+      <button id="addBookBtn">Add</button>
+      </section>
+      <section id="contact-info" class="content">
+        <h1>Contact information</h1>
+        <p>Do you have any questions or just want to say "Hello"?
+          You can reach out to us!
+        </p>
+        <ul>
+          <li>My email: fatemnazari78@gmail.com</li>
+          <li>My phone number: 00989939237795</li>
+          <li>My address: Koye Taliqani, Karaj, Iran</li>
+        </ul>
+      </section>
+  </div>
+  <footer>
+    <p>Copyright - Fatema Nazari , 2023</p>
+  </footer>
+  <script src="index.js"></script>
 </body>
 </html>
