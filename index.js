@@ -6,6 +6,8 @@ const contact = document.getElementById('contact');
 const bookLists = document.getElementById('book-lists');
 const books = document.getElementById('books');
 const contactInformation = document.getElementById('contact-info');
+const titleInput = document.getElementById('titleInput');
+const authorInput = document.getElementById('authorInput');
 
 const showContent = (contentToShow) => {
   bookLists.classList.remove('show');
@@ -15,21 +17,30 @@ const showContent = (contentToShow) => {
   contentToShow.classList.add('show');
 };
 
+const app = new AwesomeBookApp();
+const addBookButton = document.getElementById('addBookBtn');
+
+addBookButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  app.addBook(titleInput.value.trim(), authorInput.value.trim());
+
+  titleInput.value = '';
+  authorInput.value = '';
+});
+
 (() => {
-    new AwesomeBookApp();
-  
-    lists.addEventListener('click', (event) => {
-      event.preventDefault();
-      showContent(bookLists);
-    });
-  
-    addBooks.addEventListener('click', (event) => {
-      event.preventDefault();
-      showContent(books);
-    });
-  
-    contact.addEventListener('click', (event) => {
-      event.preventDefault();
-      showContent(contactInformation);
-    });
-  })();
+  lists.addEventListener('click', (event) => {
+    event.preventDefault();
+    showContent(bookLists);
+  });
+
+  addBooks.addEventListener('click', (event) => {
+    event.preventDefault();
+    showContent(books);
+  });
+
+  contact.addEventListener('click', (event) => {
+    event.preventDefault();
+    showContent(contactInformation);
+  });
+})();

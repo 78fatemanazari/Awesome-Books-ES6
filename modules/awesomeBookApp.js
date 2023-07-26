@@ -4,25 +4,15 @@ class AwesomeBookApp {
   constructor() {
     this.booksCollection = [];
     this.addBookButton = document.getElementById('addBookBtn');
-    this.titleInput = document.getElementById('titleInput');
-    this.authorInput = document.getElementById('authorInput');
+
     this.bookListDiv = document.getElementById('bookList');
-
-    this.addBookButton.addEventListener('click', this.addBook.bind(this));
-
     this.displayBooks();
   }
 
-  addBook() {
-    const title = this.titleInput.value.trim();
-    const author = this.authorInput.value.trim();
-
+  addBook(title, author) {
     if (title !== '' && author !== '') {
       const newBook = new Book(title, author);
       this.booksCollection.push(newBook);
-
-      this.titleInput.value = '';
-      this.authorInput.value = '';
 
       this.displayBooks();
     }
